@@ -1,24 +1,10 @@
 import { Router } from "express";
 
+import planetasRoutes from "./planetas.routes.js";
+
 const docesRoutes = Router();
 
-let guloseimas = [
-    {
-        id: Number(Math.floor(Math.random() * 99) + 1),
-        nome: "Trufa",
-        preco: 8.50
-    },
-    {
-        id: Number(Math.floor(Math.random() * 99) + 1),
-        nome: "Trento",
-        preco: 3.50
-    },
-    {
-        id: Number(Math.floor(Math.random() *99) + 1),
-        nome: "Carolina",
-        preco: 4.50
-    }
-];
+docesRoutes.use("/planetas", planetasRoutes)
 
 //Rota para BUSCAR todos os elementos do array guloseima
 docesRoutes.get("/", (req, res) => {
